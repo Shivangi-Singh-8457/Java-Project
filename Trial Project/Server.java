@@ -44,7 +44,7 @@ class ServiceManager extends Thread{
             ois=new ObjectInputStream(is);
             SecondData seconddata=(SecondData)ois.readObject();
             
-            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbctrial","root","shivangi4321");
+            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbctrial","root","password");
             String sql="insert into registration(name,dob,contact_no,email,password) values(?,?,?,?,?)";
             PreparedStatement pstmt=conn.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
             pstmt.setString(1,seconddata.name);
